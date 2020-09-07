@@ -1,0 +1,45 @@
+create database BankManagement;
+drop database bankmanagement;
+
+desc customer;
+desc account;
+desc transaction;
+desc mutual_fund;
+
+select * from customer;
+select * from account;
+select * from mutual_fund;
+select * from transaction;
+
+truncate customer;
+truncate transaction;
+truncate account;
+
+drop table transaction;
+drop table account;
+
+insert into customer values ('ANCIF2000K','1996-02-03','dipesh@gmail.com','Dipesh','Harijan','asdfg','9876587965');
+insert into customer values ('ANCIF2001K','1995-12-12','kiran@gmail.com','Kiran','Mathur','qwert','9816587965');
+insert into customer values ('ANCIF2002K','1994-05-15','jareen@gmail.com','Jareen','Matthews','zxcvb','8876587965');
+insert into customer values ('ANCIF2003K','1991-02-20','leo@gmail.com','Leo','John','fdsa','8776587965');
+
+insert into account values (5555555555,'BankOne','8989BO',37738,'ANCIF2000K');
+insert into account values (5555555556,'BankTwo','8910BO',37712,'ANCIF2000K');
+insert into account values (5555555557,'BankThree','3289BO',27738,'ANCIF2000K');
+insert into account values (5555555558,'BankFour','8189BO',37138,'ANCIF2001K');
+
+insert into mutual_fund values (9991,'MFOne');
+insert into mutual_fund values (9992,'MFTwo');
+insert into mutual_fund values (9993,'MFThree');
+insert into mutual_fund values (9994,'MFFour');
+
+insert into transaction values(10001,240000,9991,now(),5555555555);
+insert into transaction values(10002,260000,9991,now(),5555555555);
+insert into transaction values(10003,100000,9992,now(),5555555555);
+insert into transaction values(10004,500000,9993,now(),5555555556);
+insert into transaction values(10005,180000,9991,now(),5555555556);
+insert into transaction values(10006,700000,9992,now(),5555555556);
+insert into transaction values(10007,100000,9993,now(),5555555556);
+insert into transaction values(10008,730000,9994,now(),5555555557);
+
+
