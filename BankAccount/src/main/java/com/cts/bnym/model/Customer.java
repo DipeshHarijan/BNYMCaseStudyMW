@@ -16,7 +16,7 @@ public class Customer {
 	private String email;
 	private String phone;
 	
-	@JsonFormat(pattern = "MM/dd/yyyy")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dob;
 
 }

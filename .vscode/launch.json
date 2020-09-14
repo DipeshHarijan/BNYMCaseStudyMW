@@ -1,0 +1,54 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CustomerApplication<BankManagement>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cts.bnym.CustomerApplication",
+            "projectName": "BankManagement",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BankAccountApplication<BankAccount>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cts.bnym.BankAccountApplication",
+            "projectName": "BankAccount",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscoveryServerApplication<DiscoveryServer>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cts.bnym.DiscoveryServerApplication",
+            "projectName": "DiscoveryServer",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ZuulApiGatewayApplication<ZuulApiGateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cts.bnym.ZuulApiGatewayApplication",
+            "projectName": "ZuulApiGateway",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MutualFundApplication<MutualFund>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.cts.bnym.MutualFundApplication",
+            "projectName": "MutualFund",
+            "args": ""
+        }
+    ]
+}

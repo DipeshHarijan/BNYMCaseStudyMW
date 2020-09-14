@@ -1,0 +1,5 @@
+package com.cts.bnym.entity;
+
+public class Bank {
+
+}

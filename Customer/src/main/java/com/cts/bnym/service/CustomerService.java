@@ -10,12 +10,15 @@ import com.cts.bnym.repository.CustomerRepository;
 
 @Service
 public class CustomerService {
-	
+
 	@Autowired
 	private CustomerRepository repo;
 
 	public Customer addCustomer(Customer customer) {
-		return repo.save(customer);	
+		if (getCustomer(customer.getPan()) == null) {
+			return repo.save(customer);
+		}
+		return null;
 	}
 
 	public List<Customer> getAllCustomers() {
@@ -32,10 +35,8 @@ public class CustomerService {
 		repo.deleteById(pan);
 	}
 
-	public void updateCustomer(Customer customer) {
-		repo.save(customer);
+	public Customer updateCustomer(Customer customer) {
+		return repo.save(customer);
 	}
-	
-	
 
 }

@@ -1,11 +1,9 @@
 package com.cts.bnym.entity;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -18,7 +16,6 @@ import lombok.Data;
 public class Transaction {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long transactionId;
 
 	@Column(nullable = false)
@@ -28,9 +25,9 @@ public class Transaction {
 	private double amount;
 
 	@JsonFormat(pattern = "MM-dd-yyyy HH:mm:ss")
-	private Date time;
+	private LocalDateTime time;
 
 	@ManyToOne
-	private Account number;
+	private Account account;
 
 }

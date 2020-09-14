@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.cts.bnym.entity.Account;
 
 @Repository
-public interface BankAccountRepository extends CrudRepository<Account, String> {
+public interface BankAccountRepository extends CrudRepository<Account, Long> {
 
 	List<Account> findAllByPan (String pan);
 

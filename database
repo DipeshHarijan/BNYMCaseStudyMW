@@ -28,10 +28,12 @@ insert into account values (5555555556,'BankTwo','8910BO',37712,'ANCIF2000K');
 insert into account values (5555555557,'BankThree','3289BO',27738,'ANCIF2000K');
 insert into account values (5555555558,'BankFour','8189BO',37138,'ANCIF2001K');
 
-insert into mutual_fund values (9991,'MFOne');
-insert into mutual_fund values (9992,'MFTwo');
-insert into mutual_fund values (9993,'MFThree');
-insert into mutual_fund values (9994,'MFFour');
+insert into mutual_fund values (9897961234,'Tata Steel Mutual Funds');
+insert into mutual_fund values (9897961235,'Mahindra Mutual Funds');
+insert into mutual_fund values (9897961236,'Cognizant Mutual Funds');
+insert into mutual_fund values (9897961237,'Wipro Mutual Funds');
+insert into mutual_fund values (9897961238,'Accenture Mutual Funds');
+insert into mutual_fund values (9897961239,'Infosys Mutual Funds');
 
 insert into transaction values(10001,240000,9991,now(),5555555555);
 insert into transaction values(10002,260000,9991,now(),5555555555);

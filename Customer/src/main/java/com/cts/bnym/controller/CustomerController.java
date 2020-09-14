@@ -30,35 +30,37 @@ public class CustomerController {
 
 	@PostMapping(value = "/add")
 	public ResponseEntity<Customer> addCustomer(@Valid @RequestBody Customer customer) {
-
-		return new ResponseEntity<>(service.addCustomer(customer), HttpStatus.OK);
+		Customer cs = service.addCustomer(customer);
+		if (cs != null) {
+			return new ResponseEntity<>(cs, HttpStatus.ACCEPTED);
+		}
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 
 	@GetMapping(value = "/get/{pan}")
 	public ResponseEntity<Customer> getCustomer(@PathVariable String pan) {
-		return new ResponseEntity<Customer>(service.getCustomer(pan), HttpStatus.OK);
+		return new ResponseEntity<>(service.getCustomer(pan), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/getall")
 	public ResponseEntity<List<Customer>> getAllCustomers() {
-		return new ResponseEntity<List<Customer>>(service.getAllCustomers(), HttpStatus.OK);
+		return new ResponseEntity<>(service.getAllCustomers(), HttpStatus.OK);
 	}
 
 	@DeleteMapping(value = "/delete/{pan}")
 	public ResponseEntity<String> deleteCustomer(@PathVariable String pan) {
 		if (service.getCustomer(pan) != null) {
 			service.deleteCustomer(pan);
-			return new ResponseEntity<String>("Customer has been deleted", HttpStatus.OK);
+			return new ResponseEntity<>("Customer has been deleted", HttpStatus.OK);
 		}
-		return new ResponseEntity<String>("Customer doesn't exist", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>("Customer doesn't exist", HttpStatus.NOT_FOUND);
 	}
 
 	@PutMapping(value = "/update")
-	public ResponseEntity<String> updateCustomer(@Valid @RequestBody Customer customer) {
+	public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) {
 		if (service.getCustomer(customer.getPan()) != null) {
-			service.updateCustomer(customer);
-			return new ResponseEntity<String>("Customer details have been updated", HttpStatus.OK);
+			return new ResponseEntity<>(service.updateCustomer(customer), HttpStatus.OK);
 		}
-		return new ResponseEntity<String>("Customer not found", HttpStatus.NOT_FOUND);
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 }

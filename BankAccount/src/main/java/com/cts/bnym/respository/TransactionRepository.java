@@ -9,6 +9,6 @@ import com.cts.bnym.entity.Transaction;
 
 public interface TransactionRepository extends CrudRepository<Transaction, Long> {
 
-	List<Transaction> findAllByNumber(Account account);
+	List<Transaction> findAllByAccount(Account account);
 
 }

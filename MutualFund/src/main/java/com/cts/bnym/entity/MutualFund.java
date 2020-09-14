@@ -11,7 +11,7 @@ import lombok.Data;
 public class MutualFund {
 
 	@Id
-	private long fundId;
+	private long mutualFundId;
 
 	@Column(nullable = false)
 	private String mutualFundName;
