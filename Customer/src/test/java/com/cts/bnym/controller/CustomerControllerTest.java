@@ -47,7 +47,7 @@ public class CustomerControllerTest {
 		RequestBuilder request = MockMvcRequestBuilders.get("/customer/getall").accept(MediaType.APPLICATION_JSON);
 
 		mockMvc.perform(request).andExpect(status().isOk()).andExpect(content().json(
-				"[{\"firstName\":\"Tenali\",\"lastName\":\"Raman\",\"pan\":\"ANCIF2000K\",\"password\":\"8978ABC\",\"email\":\"tenali@gmail.com\",\"phone\":\"8978987678\",\"dob\":\"04/23/1524\"}]"))
+				"[{\"firstName\":\"Tenali\",\"lastName\":\"Raman\",\"pan\":\"ANCIF2000K\",\"password\":\"8978ABC\",\"email\":\"tenali@gmail.com\",\"phone\":\"8978987678\",\"dob\":\"1524-04-23\"}]"))
 				.andReturn();
 
 	}
@@ -62,7 +62,7 @@ public class CustomerControllerTest {
 				.accept(MediaType.APPLICATION_JSON);
 
 		mockMvc.perform(request).andExpect(status().isOk()).andExpect(content().json(
-				"{\"firstName\":\"Tenali\",\"lastName\":\"Raman\",\"pan\":\"ANCIF2000K\",\"password\":\"8978ABC\",\"email\":\"tenali@gmail.com\",\"phone\":\"8978987678\",\"dob\":\"04/23/1524\"}"))
+				"{\"firstName\":\"Tenali\",\"lastName\":\"Raman\",\"pan\":\"ANCIF2000K\",\"password\":\"8978ABC\",\"email\":\"tenali@gmail.com\",\"phone\":\"8978987678\",\"dob\":\"1524-04-23\"}"))
 				.andReturn();
 
 	}
@@ -76,14 +76,14 @@ public class CustomerControllerTest {
 
 		RequestBuilder request = MockMvcRequestBuilders.post("/customer/add").accept(MediaType.APPLICATION_JSON)
 				.content(
-						"{\"firstName\":\"Tenali\",\"lastName\":\"Raman\",\"pan\":\"ANCIF2000K\",\"password\":\"8978ABC\",\"email\":\"tenali@gmail.com\",\"phone\":\"8978987678\",\"dob\":\"04/23/1524\"}")
+						"{\"firstName\":\"Tenali\",\"lastName\":\"Raman\",\"pan\":\"ANCIF2000K\",\"password\":\"8978ABC\",\"email\":\"tenali@gmail.com\",\"phone\":\"8978987678\",\"dob\":\"1524-04-23\"}")
 				.contentType(MediaType.APPLICATION_JSON);
 
 		MvcResult result = mockMvc.perform(request).andReturn();
 
 		MockHttpServletResponse response = result.getResponse();
 
-		assertEquals(HttpStatus.CREATED.value(), response.getStatus());
+		assertEquals(HttpStatus.ACCEPTED.value(), response.getStatus());
 
 	}
 
